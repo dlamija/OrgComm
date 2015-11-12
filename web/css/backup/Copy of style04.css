@@ -1,0 +1,77 @@
+/* ------------- Page Style ------------------- */
+
+a:link {  text-decoration: none}
+a:visited { text-decoration: none; color: #000099}
+a:active {  color: #0000FF}
+a:hover { text-decoration: underline}
+input {  font-family: "Courier New", Courier, mono; font-size: 9pt}
+
+/* ------------------------------------ */
+
+.titleTop {  background-color: #996633}
+.titleMenu {  background-color: #996633}
+.titleMenuTop {  background-color: #CC9966}
+.titleMenuBottom {  background-color: #663300}
+.titleMenuFont { color: #FFFFFF; font-family: Arial; font-size: 7.5pt; font-weight: bold}
+.titleMenuGlyphFont { color: #FFFFFF; font-family: Arial; font-size: 10pt}
+
+/* ------------------------------------ */
+
+.logoTitleBgColor { background-color: #FFFFCC}
+.searchBgColor { background-color: #CC6633}
+.dateFont {  font-family: Arial; font-size: 7.5pt; color: #FFFFCC}
+.dateGlyphFont {  font-family: Arial; font-size: 10pt; color: #FFFFCC}
+
+/* ------------------------------------ */
+
+.companyTitleFont { font-family: Arial; font-size: 10pt ; color: #330000}
+.companyTitleBgColor { background-color: #FFFFCC}
+
+/* ------------------------------------ */
+
+.desktopFont {  color: #FFFF99; font-family: Arial; font-size: 9pt}
+.desktopBgColor { background-color: #330000}
+
+/* ------------------------------------ */
+
+.calendarMonthBgColor {  background-color: #330000}
+.calendarMonthFont { font-family: Arial; font-size: 10pt; font-weight: bold}
+.calendarMonthGlyphFont { font-family: Arial; font-size: 10pt}
+.calendarBgColor {  background-color: #E4E4CB}
+.calendarContentFont { font-family: Arial, Helvetica, sans-serif; font-size: 8pt}
+
+/* ------------------------------------ */
+
+.highlight {  color: #FF0000}
+
+/* ------------------------------------ */
+
+.menuFont {  font-family: Arial; font-size: 7.5pt; color: #FFFF99; font-weight: bold}
+.menuGlyphFont {  font-family: Arial; font-size: 10pt; color: #FFFF99}
+.menuBgColor {  background-color: #996633}
+.menuBgColorHighlight { background-color: #cc9966}
+.menuBgColorShadow { background-color: #663300}
+
+/* ------------------------------------ */
+
+.contentBgColor {  background-color: #FFFFCC; font-family: Arial, Helvetica, sans-serif; font-size: 10pt}
+.contentFont { font-family: Arial, Helvetica, sans-serif; font-size: 9pt}
+.contentTitleFont { font-family: Arial; font-size: 7.5pt; color: #FFFFFF; font-weight: bold}
+.contentTitleGlyphFont { font-family: Arial; font-size: 9pt; color: #FFFFFF}
+.contentStrapColor { background-color: #330000; font-family: Arial; font-size: 8.5pt;color:#FFFF99}
+
+/* ------------------------------------ */
+
+.sideTitleFont {  font-family: Arial; font-size: 7.5pt; color: #FFFFCC; text-decoration: none;font-weight: bold}
+.sideTitleGlyphFont {  font-family: Arial; font-size: 9pt; color: #FFFFCC; text-decoration: none}
+.sideTitleBgBorderColor {  background-color: #CC3300}
+.sideBodyFontAndBgColor {  font-family: Arial, Helvetica, sans-serif; font-size: 8.5pt; background-color: #FFFFFF}
+
+.textFont {  color: #0066CC}
+.contentBgColorAlternate { background-color: #FFFFBB; font-family: Arial, Helvetica, sans-serif; font-size: 10pt}
+.hpTitleFont {  font-size: 16pt; color: #666666}
+.hpMenuFont {  background-color: #CCCCFF; font-family: Arial; font-size: 10pt}
+.hpContentFont {  color: #006699}
+.hpContentHeaderFont {  }
+.hpMenuTitleFont {  font-weight: bold; background-color: #FFCC99; font-family: Arial; font-size: 10pt}
+.copyright {  font-family: "Courier New", Courier, mono; font-size: 10pt; color: #666666}

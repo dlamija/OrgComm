@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/858/eComm_UMPStaff/web/WEB-INF/lib
+END
+commons-beanutils-1.8.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/commons-beanutils-1.8.3.jar
+END
+jasperreports-3.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/317/eComm_UMPStaff/web/WEB-INF/lib/jasperreports-3.7.1.jar
+END
+jstl-1.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/255/eComm_UMPStaff/web/WEB-INF/lib/jstl-1.1.2.jar
+END
+ajaxtags-resources-1.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/658/eComm_UMPStaff/web/WEB-INF/lib/ajaxtags-resources-1.5.1.jar
+END
+uploadbean.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/766/eComm_UMPStaff/web/WEB-INF/lib/uploadbean.jar
+END
+Serialization.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/Serialization.jar
+END
+slf4j-simple-1.5.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/slf4j-simple-1.5.5.jar
+END
+jcommon-1.0.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/jcommon-1.0.16.jar
+END
+apache-solr-solrj-1.4.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/apache-solr-solrj-1.4.0.jar
+END
+freemarker-2.3.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/274/eComm_UMPStaff/web/WEB-INF/lib/freemarker-2.3.4.jar
+END
+commons-collections-3.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/716/eComm_UMPStaff/web/WEB-INF/lib/commons-collections-3.2.1.jar
+END
+commons-httpclient-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/commons-httpclient-3.1.jar
+END
+ical4j-1.0-rc3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/720/eComm_UMPStaff/web/WEB-INF/lib/ical4j-1.0-rc3.jar
+END
+servlet-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/380/eComm_UMPStaff/web/WEB-INF/lib/servlet-api.jar
+END
+jfreechart-1.0.13.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/jfreechart-1.0.13.jar
+END
+standard-1.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/255/eComm_UMPStaff/web/WEB-INF/lib/standard-1.1.2.jar
+END
+jasperreports-fonts-3.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/317/eComm_UMPStaff/web/WEB-INF/lib/jasperreports-fonts-3.7.1.jar
+END
+spring-core-2.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/spring-core-2.5.6.jar
+END
+backport-util-concurrent-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/720/eComm_UMPStaff/web/WEB-INF/lib/backport-util-concurrent-3.1.jar
+END
+iText-2.1.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/317/eComm_UMPStaff/web/WEB-INF/lib/iText-2.1.7.jar
+END
+log4j-1.2.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/255/eComm_UMPStaff/web/WEB-INF/lib/log4j-1.2.15.jar
+END
+yahp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/858/eComm_UMPStaff/web/WEB-INF/lib/yahp.jar
+END
+xalan.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/xalan.jar
+END
+oscache.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/oscache.jar
+END
+jakarta-regexp-1.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/jakarta-regexp-1.5.jar
+END
+xercesImpl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/xercesImpl.jar
+END
+jasperreports-javaflow-3.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/317/eComm_UMPStaff/web/WEB-INF/lib/jasperreports-javaflow-3.7.1.jar
+END
+commons-digester-1.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/commons-digester-1.8.1.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/mail.jar
+END
+Concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/Concurrent.jar
+END
+cos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/766/eComm_UMPStaff/web/WEB-INF/lib/cos.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/720/eComm_UMPStaff/web/WEB-INF/lib/commons-codec-1.3.jar
+END
+ojdbc6-11.1.0.7.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/ojdbc6-11.1.0.7.0.jar
+END
+taglibs-string.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/706/eComm_UMPStaff/web/WEB-INF/lib/taglibs-string.jar
+END
+xml-apis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/xml-apis.jar
+END
+jasperreports-applet-3.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/317/eComm_UMPStaff/web/WEB-INF/lib/jasperreports-applet-3.7.1.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/255/eComm_UMPStaff/web/WEB-INF/lib/commons-logging-1.1.1.jar
+END
+commons-lang-2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/720/eComm_UMPStaff/web/WEB-INF/lib/commons-lang-2.5.jar
+END
+slf4j-api-1.5.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/slf4j-api-1.5.5.jar
+END
+spring-beans-2.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/324/eComm_UMPStaff/web/WEB-INF/lib/spring-beans-2.5.6.jar
+END
+displaytag-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/780/eComm_UMPStaff/web/WEB-INF/lib/displaytag-1.2.jar
+END
+jxl-2.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/680/eComm_UMPStaff/web/WEB-INF/lib/jxl-2.6.jar
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/210/eComm_UMPStaff/web/WEB-INF/lib/activation.jar
+END
+ajaxtags-1.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/658/eComm_UMPStaff/web/WEB-INF/lib/ajaxtags-1.5.1.jar
+END

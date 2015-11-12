@@ -1,0 +1,97 @@
+<%@ page session="true" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.net.URLEncoder" %>
+<%@ include file="/includes/import.jsp" %>
+
+
+
+<html>
+<head>
+<title>:: Message ::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #000000;
+}
+-->
+</style></head>
+
+<%	//Connection...
+	Connection conn = null;
+
+	String id= (String)session.getAttribute("staffid");
+    String action=request.getParameter("action");
+
+   //String []ref    = request.getParameterValues("code");
+
+ try
+	{
+		Context initCtx = new InitialContext();
+		Context envCtx  = (Context) initCtx.lookup( "java:comp/env" );
+		DataSource ds   = (DataSource)envCtx.lookup( "jdbc/cmsdb" );
+		conn = ds.getConnection();
+
+
+	}
+	catch( Exception e )
+	{
+		out.println (e.toString());
+	}
+
+%>
+
+
+
+
+<%
+if (conn!=null && request.getParameterValues("code")!=null && action!=null && action.equals("delete"))
+	{
+	String [] ref = request.getParameterValues("code");
+	
+	String sql =	"DELETE FROM CMSADMIN.ANNOUNCEMENT_MAIN AM "+
+	             	"WHERE AM.AM_REF = ? ";
+
+				 
+	for (int a=0; a<ref.length; a++)
+		{
+		try
+			{
+			PreparedStatement pstmt = conn.prepareStatement (sql);
+		    pstmt.setString (1, ref[a]);
+			int rc=pstmt.executeUpdate();
+			if (rc>0)
+				{ %>Delete Ref <%=ref[a]%> ... Done<br><% }
+			else 
+				{ %>Delete Ref <%=ref[a]%> ... Fail<br><% }
+			pstmt.close ();
+			}
+		catch (SQLException e)
+			{ out.println ("Error : " + e.toString ()); }
+		}
+	}
+conn.close ();
+%>
+
+<meta http-equiv="refresh" content="2; URL=announcement.jsp">
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+

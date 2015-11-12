@@ -1,0 +1,192 @@
+<%@ page session="true" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import="java.util.*" %>
+<%@ include file="/includes/import.jsp" %>
+<html>
+<head>
+<jsp:useBean id="stream" scope="page" class="common.CommonFunction"/>
+<script language = "Javascript">
+
+function gotopage (selSelectObject)
+{
+if(selSelectObject.options[selSelectObject.selectedIndex].value != "")
+  {
+   location.href=selSelectObject.options[selSelectObject.selectedIndex].value
+  }
+}
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.style2 {font-size: 14px}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+.style4 {font-size: 10px}
+.style5 {
+	font-size: 9px;
+	font-style: italic;
+	color: #CC6600;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<%
+	Connection conn = null;
+	String id= (String)session.getAttribute("staffid");
+	String action = request.getParameter("action");
+	
+	String ref =request.getParameter("ref");
+
+ 	try {
+		Context initCtx = new InitialContext();
+		Context envCtx  = (Context) initCtx.lookup( "java:comp/env" );
+		DataSource ds   = (DataSource)envCtx.lookup( "jdbc/cmsdb" );
+		conn = ds.getConnection();
+	}
+	catch( Exception e )
+	{ out.println (e.toString()); }
+%>
+
+<body>
+<div align="center"><strong><font face="Verdana, Arial, Helvetica, sans-serif"><a href="javascript:void(window.close('cms/kmsentry/view.jsp'))" class="style4">Close</a></font>  </strong> 
+  <!----------------mula di sini--------------->
+  <%
+	// Get staff data...
+    String kategori="";
+	String tajuk="";
+	String mesej="";
+	String tarikh="";
+	String kiriman="";
+	String url="";
+	String access="";
+	String student="";
+	String mesej2="";
+	//String ref = request.getParameter("ref");
+	
+	String tarikhlulus="";
+	
+	String jabatan = "";
+	String jabatanstd = "";
+	
+	String sql	= "SELECT ac_cat_desc,am_title,am_message,TO_CHAR(am_date,'DD-MON-YY'),sm_staff_name,am_url,am_access, "+
+"sm_student_name,to_char(AM_APPROVE_DATE,'DD MON yyyy'),a.DM_DEPT_DESC,b.dm_dept_desc "+
+"FROM announcement_main,staff_main,announcement_category,student_main,DEPARTMENT_MAIN a,department_main b "+
+"where am_ref = '"+ref+"'  and am_posted_by=sm_staff_id(+) and ac_cat_id = am_category and sm_student_id(+)=am_posted_by and "+  "SM_DEPT_CODE=a.DM_DEPT_CODE(+) and sm_faculty_code = b.dm_dept_code(+) ";
+				 
+	try {
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rset = pstmt.executeQuery ();
+		
+		if (rset.next()) {
+			kategori = rset.getString (1);
+			tajuk = rset.getString (2);
+			mesej = stream.stream2String(rset.getAsciiStream("am_message"));
+			//mesej = stream.ln2br(mesej2);
+			tarikh = rset.getString (4);
+			kiriman = rset.getString (5);
+			url = rset.getString (6);
+			access = rset.getString (7);
+			student = rset.getString(8);
+			tarikhlulus = rset.getString(9);
+			//namauser = rset.getString(10);
+			jabatan = rset.getString(10);
+			jabatanstd = rset.getString(11);
+			
+		}
+		rset.close();
+		pstmt.close ();
+	}
+	catch (SQLException e) {
+		out.println ("Error SQL: " + e.toString ()); 
+	}
+	finally {
+		try {
+			if (conn != null) conn.close();
+		}
+		catch (Exception e) {  }
+	}
+%>
+
+  <a href="<%=request.getContextPath()%>/servlet/AnnouncementReport?ref=<%=ref%>" onMouseOver="window.status='Print';return true;" target="_blank">
+  	<IMG SRC = "../../../images/system/ic_printer.gif" ALT = "Print" border = "0"><span class="style3">Printable</span></a>
+
+</div>
+<TABLE id="Table_01" height="82" cellSpacing="0" cellPadding="0" width="95%" align="center" border="0">
+	<TBODY>
+    	<TR> 
+      		<TD width="1%" height="39"><IMG height="39" alt="" src="images/clas_01.gif" width="16"></TD>
+      		<TD width="97%" background="images/clas_02.gif"> 
+        		<DIV align="center">
+					<FONT color="#ffffff"><STRONG><font size="2" face="Verdana, Arial, Helvetica, sans-serif" >Announcement
+					<FONT color="#ffff99">Board</font></FONT></STRONG></FONT> 
+        		</DIV>
+			</TD>
+      		<TD width="2%"> <DIV align="left"><IMG height="39" alt="" src="images/clas_04.gif" width="17"></DIV></TD>
+    	</TR>
+    	<TR> 
+     		<TD background="images/clas_05.gif" height="27">
+			 	<IMG height="24" alt="" src="images/clas_05.gif" width="16"></TD>
+      		<TD align="right" vAlign="top" bgColor="#ffffff">
+				<DIV align="right"> <font color="#333333"><strong><font size="1" face="Verdana, Arial, Helvetica, sans-serif"></font></strong></font>
+           <TABLE WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="3">
+          
+            <tr valign="top" bgcolor="#FFEFCE" class="smallfont"> 
+              <td width="100%" class="contentBgColor style2"></td>
+             </tr>
+            <tr valign="top" bgcolor="#FFEFCE" class="smallfont"> 
+              <td class="contentBgColor">
+			      <div align="justify"><font color="blue" face="Verdana, Arial, Helvetica, sans-serif"><b><%=( ( tajuk ==null)?"-":tajuk )%></b></font>
+		            <br>
+			            <span class="style5"><font face="Verdana, Arial, Helvetica, sans-serif">Category: <%=( ( kategori ==null)?"-":kategori )%></font></span><br>
+		            <br>
+			            <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><%=( ( mesej ==null)?"-":mesej )%><br>
+			              
+		                    </font></font> <br>
+			        <font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="<%=url%>"><%=( ( url ==null)?"-":url )%></a></font></div></td>
+             </tr>
+            <tr valign="top" bgcolor="#FFEFCE" class="smallfont"> 
+              <td class="contentBgColor"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Posted 
+                by<strong> <%=( ( kiriman ==null)?"":kiriman )%><%=( ( student ==null)?"":student )%></strong>, <%=( ( jabatan ==null)?"":jabatan )%><%=( ( jabatanstd ==null)?"":jabatanstd )%><br>
+                <font size="1" face="Verdana, Arial, Helvetica, sans-serif"><%=( ( tarikhlulus ==null)?"":tarikhlulus )%></font></font>				</td>
+             </tr>
+          </table>
+          <font color="#333333"><strong><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          </font></strong></font><strong><font color="white" size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          </font></strong> </DIV></TD>
+      <TD 
+                            background="images/clas_07.gif"> 
+        <DIV align="left"><IMG height="27" alt="" 
+                              src="images/clas_07.gif" 
+                              width="17"></DIV></TD>
+    </TR>
+    <TR> 
+      <TD><IMG height="16" alt="" 
+                              src="images/clas_08.gif" 
+                              width="16"></TD>
+      <TD 
+                            background="images/clas_09.gif"><IMG 
+                              height="16" alt="" 
+                              src="images/clas_09.gif" 
+                              width="199"></TD>
+      <TD> <DIV align="left"><IMG height="16" alt="" 
+                              src="images/clas_10.gif" 
+                              width="17"></DIV></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+
+<!--------------------------------------------->
+
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean
+END
+MeetingGuest.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingGuest.java
+END
+MeetingAgendaAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingAgendaAttachment.java
+END
+MeetingNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingNotes.java
+END
+EMeetingMain.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/EMeetingMain.java
+END
+MeetingDecisionProgressAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingDecisionProgressAttachment.java
+END
+MeetingDecisionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingDecisionAction.java
+END
+MeetingDecision.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingDecision.java
+END
+MeetingDecisionAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingDecisionAttachment.java
+END
+MeetingAttendance.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingAttendance.java
+END
+MeetingFollowup.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingFollowup.java
+END
+MeetingMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingMember.java
+END
+MeetingAttendanceOther.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingAttendanceOther.java
+END
+MeetingActionBy.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingActionBy.java
+END
+MeetingData.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingData.java
+END
+MeetingCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingCategory.java
+END
+MeetingResourceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingResourceBean.java
+END
+MeetingAgenda.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingAgenda.java
+END
+Meeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/Meeting.java
+END
+MeetingDecisionActionProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingDecisionActionProgress.java
+END
+MeetingType.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingType.java
+END
+MeetingVenue.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingVenue.java
+END
+MeetingMinutes.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/bean/MeetingMinutes.java
+END

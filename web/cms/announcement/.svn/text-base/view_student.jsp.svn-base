@@ -1,0 +1,181 @@
+<%@ page session="true" %>
+<%@page import="java.sql.*" %>
+<%@page import="javax.sql.*" %>
+<%@page import="javax.naming.*" %>
+
+
+<%
+Connection conn = null;
+float total;
+boolean data = false;
+
+
+String action=request.getParameter("action");
+String id= (String)session.getAttribute("staffid");
+String id_sub = request.getParameter("ls_sub");
+String ref = request.getParameter("ref");
+
+
+try
+	{
+    	Context initCtx = new InitialContext();
+    	Context envCtx  = (Context) initCtx.lookup( "java:comp/env" );
+    	DataSource ds   = (DataSource)envCtx.lookup( "jdbc/cmsdb" );
+	conn = ds.getConnection();
+	}
+catch( Exception e )
+	{ out.println (e.toString()); }
+
+
+%>
+
+
+
+	<SCRIPT LANGUAGE="JavaScript">
+
+function done(ref)
+	{
+	document.form1.action="announcement.jsp?action=rejectstd&ref=" +ref;
+	document.form1.submit();
+	//window.opener.document.forms[0].test.value=document.forms[0].position.value
+	//window.close();
+	}
+
+</SCRIPT>
+
+	
+<script language="JavaScript" src="cms/ProgressReport/calendar.js">
+</script>
+
+
+<script language = "Javascript">
+
+function gotopage (selSelectObject)
+{
+if(selSelectObject.options[selSelectObject.selectedIndex].value != "")
+  {
+   location.href=selSelectObject.options[selSelectObject.selectedIndex].value
+  }
+}
+
+</script>
+
+
+
+<%@include file="include/date.jsp"%>
+
+
+
+
+
+<style type="text/css">
+<!--
+.style1 {	font-family: Arial;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.style2 {	font-family: Arial;
+	font-size: 10px;
+	font-weight: bold;
+}
+-->
+</style>
+
+
+  <%@include file="header.jsp"%>
+
+<% if(conn !=null && action!=null && action.equals("rejectstd"))
+{
+
+String sql_inst = "{ ? = call ANNOUNCE.RejectAnnouncement(?, ?) }";
+	try
+	{
+		System.out.println("reject");
+		CallableStatement pstmt = conn.prepareCall(sql_inst);
+		pstmt.registerOutParameter (1, Types.NUMERIC );
+		pstmt.setString (2,ref);
+		pstmt.setString(3, id);
+        pstmt.execute ();
+		System.out.println("reject2");
+		pstmt.close ();
+	}
+     	catch (SQLException e)
+        	{			out.println (e.toString ());   }
+}
+	conn.close ();
+
+%>
+
+<form name="form1" method="post" action="">
+
+  <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <tr valign="bottom" > 
+      <td height="30" colspan="8" bgcolor="#FF9900"><b><img src="cms/ProgressReport/images/kvadratic.gif"><span class="style1"> 
+        List Of Student Annoucement</span></b></td>
+    </tr>
+    <tr> 
+      <td height="20" colspan="8" bgcolor="#FFCC99" ><span class="style2">Today's 
+        Date:<%=date%></span></td>
+    </tr>
+    <%
+if (conn!=null)
+	{
+		
+		 String sql_daily = null;
+
+		sql_daily	=  "SELECT am_ref,ac_cat_desc,am_title,am_message,TO_CHAR(am_date,'DD-MON-YY'),am_url,am_status "+
+                       "FROM announcement_main,announcement_category,cmsusers_view "+
+					   "where am_posted_by = cmsid and ac_cat_id=am_category "+
+					   "and usertype='STUDENT' "+
+					    "and sysdate <= am_approve_date + am_total_day "+
+					   "order by am_date desc ";
+  
+		try
+			{
+			PreparedStatement pstmt = conn.prepareStatement(sql_daily);
+			//pstmt.setString (1, session.getAttribute("staffid").toString());
+
+			ResultSet rset = pstmt.executeQuery ();
+			if (rset.isBeforeFirst ()) { %>
+    <tr valign="middle" class="smallbold"> 
+      <td width="4%" height="20" CLASS="contentBgColorAlternate"> <div align="center"></div></td>
+      <td width="15%" height="20" CLASS="contentBgColorAlternate"> <div align="center"><b>Category</b></div></td>
+      <td width="43%" height="20" CLASS="contentBgColorAlternate"> <div align="center"><b>Title</b></div></td>
+      <td width="13%" height="20" CLASS="contentBgColorAlternate"> <div align="center"></div>
+        <div align="center"><b>Date</b></div></td>
+      <td width="16%" height="20" CLASS="contentBgColorAlternate"> <div align="center"><b>Status</b></div></td>
+      <td width="9%" height="20" CLASS="contentBgColorAlternate"> <div align="center"><b>Reject?</b></div></td>
+    </tr>
+    <%   while (rset.next ()) { %>
+    <tr valign="top" class="smallfont"> 
+      <td class = "contentBgColor"> <div align="left"></div>
+        <div align="center"><%=rset.getRow()%>.</div></td>
+      <td bgcolor="#FFFFFF" class = "contentBgColor"><a href="javascript:void(window.open('cms/announcement/entry/view.jsp?ref=<%=rset.getString(1)%>','view', 'height=600,width=800,menubar=no,toolbar=no,scrollbars=yes'))"><%=rset.getString(2)%></a></td>
+      <td bgcolor="#FFFFFF" class = "contentBgColor"><a href="javascript:void(window.open('cms/announcement/entry/view.jsp?ref=<%=rset.getString(1)%>','view', 'height=600,width=800,menubar=no,toolbar=no,scrollbars=yes'))"><%=rset.getString(3)%></a></td>
+      <td bgcolor="#FFFFFF" class = "contentBgColor"><%=rset.getString(5)%></td>
+      <td bgcolor="#FFFFFF" class = "contentBgColor"> 
+        <div align="center"><%=rset.getString(7)%></div></td>
+      <td class = "contentBgColor"> <div align="center"><span class="style1"><font color="#000000"><A HREF="javascript:done(<%=rset.getString(1)%>);" onMouseOver="window.status='Reject';return true;">[Reject]</A></font></span></div></td>
+    </tr>
+    <% } %>
+  </table>
+  <div align="right"><br>
+  </div>
+</form>
+       <%  } else { %>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFF">
+  <tr>
+    <td colspan="11"><font color="red" size="1" style="font-family: Verdana, sans-serif; font-size: 11px;  8px;">No activities available</font> </td>
+  </tr>
+</table>
+
+        <% }
+
+			rset.close ();
+			pstmt.close ();
+			}
+	catch( Exception e )
+		{ out.println (e.toString()); }
+	}
+conn.close ();
+%>

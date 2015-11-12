@@ -1,0 +1,213 @@
+html, body {
+ 	margin: 0;
+ 	padding: 0;
+ 	background-color: #fff;
+ 	color: #000;
+}
+
+body {
+ 	width: 97%;
+}
+
+#header {
+ 	color: #000;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+#leftcol {
+ 	float: left;
+ 	width: 160px;
+ 	margin-left: 10px;
+ 	margin-top: 0;
+ 	color: #000;
+  background-color: #dedfde;
+ 	padding: 3px;
+}
+
+#rightcol {
+ 	float: right;
+ 	width: 150px;
+ 	margin-right: 0;
+ 	margin-top: 0;
+ 	color: #000;
+  background-color: #fff;
+ 	padding: 3px;
+ 	text-align: right;
+}
+
+#content {
+  width: 550px;
+ 	margin-left: 210px;
+  color: #000;
+ 	background-color: #fff;
+}
+
+#footer {
+ 	clear: both;
+ 	width: 95%;
+ 	margin: 10px;
+ 	text-align: center;
+}
+
+p {
+ 	font: .9em arial, sans-serif;
+}
+
+
+/* ============================= */
+
+.comments {
+  /* margin-top: 15px; */
+  font: bold .8em arial, sans-serif;
+  padding: 0 1em 1em 1em;
+  border: 1px solid #BDBF00;
+  color: inherit;
+  background-color: #FFFFCC;
+  width: 400px;
+}
+
+legend.main {
+  font: bold 1em arial, sans-serif;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+legend {
+  font-weight: bold;
+}
+
+textarea {
+  border: 1px solid #BDBF00;
+  font: .9em arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+textarea.tabber {
+  border: 1px solid #BDBF00;
+  font: .9em arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 1px solid #BDBF00;
+}
+
+input.not {
+  display: none;
+}
+
+fieldset.signUp {
+  margin: 1em 0;
+  padding: 0 1em 1em 1em;
+  border: 1px solid #BDBF00;
+  background-color: #FFFFCC;
+  color: #000;
+}
+
+#subscribe {
+  text-align: center;
+  width: 288px;
+  font: bold .9em arial, sans-serif;
+  margin-left : auto;
+ 	margin-right : auto;
+}
+
+#getScript {
+  text-align: center;
+  width: 288px;
+  font: bold .9em arial, sans-serif;
+  margin-left : auto;
+ 	margin-right : auto;
+}
+
+small {
+  font-family: arial, sans-serif;
+  font-size: .9em;
+}
+
+.popUp {
+  margin: 10px 25px 0 25px;
+  font: .8em arial, sans-serif;
+}
+
+.mp_backlinks {
+  padding-top: 20px;
+  font: bold 1.4em "Georgia", "Times New Roman", Times, serif;
+}
+
+.demo {
+  font: 1em arial, sans-serif;
+  line-height: 1.2em;
+}
+
+.footer {
+  font-size: .8em;
+}
+
+.footer2 {
+  text-align: center;
+  font: .9em arial, sans-serif;
+  padding-top: 20px;
+}
+
+h4 {
+  font: bold .8em arial, sans-serif;
+}
+
+em.date {
+  font-weight: normal;
+  font-size: .9em;
+}
+
+h6 {
+  background-color: #000099;
+  color: #fff;
+  font: bold .9em arial, sans-serif;
+/*  font-family: arial, sans-serif;
+  font-size: .9em;
+  font-weight: bold; */
+  line-height: 12px;
+  text-align: center;
+  margin: 0;
+}
+
+.linkitem {
+  color:#000;
+  background-color: inherit;
+  font-family: Arial;;
+  font-size: 12px;
+}
+
+.catitem    {
+  color:#000;
+  background-color: inherit;
+  font-family: Arial;;
+  font-size: 12px;
+}
+
+a:link {
+  color:#0000FF;
+  background-color: inherit;
+  text-decoration:underline;
+}
+
+a:visited {
+  color:#000099;
+  background-color: inherit;
+  text-decoration:underline;
+}
+
+a:hover {
+  color:#FF0000;
+  text-decoration:underline;
+  background-color: inherit;
+}
+
+em.comm {
+  font-family: arial, sans-serif;
+  font-size: .8em;
+  font-style: normal;
+}

@@ -1,0 +1,10 @@
+body {
+	margin-bottom: 0px;
+	//background-color: #192227;
+}
+
+
+.div1 {
+	OVERFLOW-Y: auto; OVERFLOW-X: hidden; BORDER-BOTTOM-WIDTH: 0px; OVERFLOW: auto; WIDTH: auto; HEIGHT: 280px
+}
+

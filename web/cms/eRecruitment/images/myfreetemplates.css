@@ -1,0 +1,54 @@
+/* Provided by MyFreeTemplates.com */
+
+a.sidetable {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: Black;
+	text-decoration: none;
+}
+a.sidetable:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: Black;
+	text-decoration: underline;
+}
+body, p, td, h1, h2, h3,newsarticle { font-family: Verdana, Arial, Helvetica, sans-serif; }
+body, p, td{ font-size: 11px; }
+h1 {
+	font-size: 14px;
+	color: #989898;
+	font-weight: bold;
+}
+h2 {
+	font-size: 11px;
+	font-weight: bold;
+}
+h3 {font-size: 11px;}
+.newsarticle {
+	font-size: 11px;
+	color: White;
+}
+.base {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.baselink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: Silver;
+}
+a.whitenav {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+a.whitenav:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: white;
+	font-weight: bold;
+	text-decoration: underline;
+}

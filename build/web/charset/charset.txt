@@ -1,0 +1,9 @@
+chinese.simplified
+chinese.traditional
+english
+french
+greek
+japanese
+malay
+portuguese
+spanish

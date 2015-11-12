@@ -1,0 +1,434 @@
+<%@ page session="true" %>
+<%@page import="java.sql.*" %>
+<%@page import="javax.sql.*" %>
+<%@page import="javax.naming.*" %>
+
+<jsp:useBean id="validator" class="cms.staff.StaffValidator" scope="request" />
+
+
+
+
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language = "Javascript">
+function gotoPage()  {
+  location.href = "staffAttendance.jsp?action=attendance_report&month=" + this.form1.month.value;  
+}
+</script>
+
+
+<%
+	Connection conn = null;
+	String id= (String)session.getAttribute("staffid");
+	String ddate = "";
+	String month = null;
+	String current_date = "";
+	try
+	{
+    	Context initCtx = new InitialContext();
+    	Context envCtx  = (Context) initCtx.lookup( "java:comp/env" );
+    	DataSource ds   = (DataSource)envCtx.lookup( "jdbc/cmsdb" );
+		conn = ds.getConnection();
+		validator.setDBConnection (conn);
+	}
+	catch( Exception e )
+	{ 
+		System.out.println (e.toString()); 
+	}
+%>
+</head>
+
+<body>
+
+<%  String jenisstaff="";
+
+	String sql_staff	= 	"SELECT SAS.SAS_STAFF_ID,SAS.SAS_FLEXI_HOUR "+
+                           	"FROM CMSADMIN.STAFF_ATTENDANCE_SETUP SAS "+
+							"WHERE SAS.SAS_STAFF_ID = ? ";
+	try
+		{
+		PreparedStatement pstmt = conn.prepareStatement(sql_staff);
+		pstmt.setString (1, id);
+		ResultSet rset = pstmt.executeQuery ();
+		if (rset.next())
+			{
+				jenisstaff      = rset.getString (2);
+			}
+		rset.close();
+pstmt.close ();
+		}
+	catch (SQLException e)
+		{ out.println ("Error Staff_Info: " + e.toString ()); }
+%>
+
+
+<form action="../StaffAttendance/staffAttendance.jsp?action=attendance_report" method="post" name="form1">
+  <table width="50%" border="0" cellpadding="0" cellspacing="0" bgcolor="#999999" >
+    <tr><td class = "contentStrapColor"><b>View Attendance Report</b></td></tr>
+    <tr>
+      <td>
+        <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#999999" >
+          <tr valign="top" class="smallfont"> 
+            <td width="50%" align="left" valign="middle" bgcolor="#FFFFFF" class = "contentBgColor"><strong>Month</strong></td>
+            <td width="50%" align="left" valign="middle" bgcolor="#FFFFFF" class = "contentBgColor"> 
+              <select name="month">
+                <%
+if (conn!=null)
+	{
+	String sql = "SELECT DISTINCT TO_CHAR(SAH.SAH_DATE,'MM/YYYY') SAH_DATE,TO_CHAR(SAH.SAH_DATE,'MONTH YYYY'),TO_CHAR(SAH.SAH_DATE,'YYYY') a, "+
+				 "TO_CHAR(SAH.SAH_DATE,'MM') b  "+
+	              "FROM CMSADMIN.STAFF_ATTENDANCE_HEAD SAH " +
+				 "WHERE sah_staff_id = ? " +
+				" AND exists " +
+				 "(select 1 from staff_hierarchy " +
+				"where sah_staff_id = sh_staff_id " +
+				"and sh_sys_id = 'ADM_AL') " +
+				//"and SH_REPORT_TO= ? ) " +
+				"order by a desc, b desc  ";
+
+//	String sql = "SELECT DISTINCT TO_CHAR(SAH_DATE,'MM/YYYY') SAH_DATE,TO_CHAR(SAH_DATE,'MONTH YYYY') FROM STAFF_ATTENDANCE_HEAD " +
+		//		 "WHERE exists " +
+				// "(select 1 from staff_hierarchy " +
+				//"where sah_staff_id = sh_staff_id " +
+				//"and sh_sys_id = 'ADM_AL' " +
+				//"and sh_staff_id = ? " +
+				//"and SH_REPORT_TO= ? ) " +
+				//"order by SAH_DATE DESC ";
+				 
+	
+	//SQL ASAL ---- 
+	//String sql = "SELECT DISTINCT TO_CHAR(SAH_DATE,'MM/YYYY') SAH_DATE,TO_CHAR(SAH_DATE,'MONTH YYYY') FROM STAFF_ATTENDANCE_HEAD " +
+				// "WHERE SAH_STAFF_ID IN " +
+				 //"(SELECT ? FROM DUAL UNION SELECT SH_STAFF_ID FROM STAFF_HIERARCHY WHERE SH_SYS_ID = 'ADM_AL' " +
+				 //"AND SH_REPORT_TO = ?) " +
+				 //"ORDER BY SAH_DATE DESC";
+	try
+		{
+		PreparedStatement pstmt = conn.prepareStatement (sql, ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+		pstmt.setString (1, session.getAttribute("staffid").toString());
+		//pstmt.setString (2, session.getAttribute("staffid").toString());
+		ResultSet rset = pstmt.executeQuery ();
+		while (rset.next ())
+			{
+			if (rset.isFirst())
+				month = rset.getString(1);
+%>
+                <option value="<%=rset.getString(1)%>"><%=rset.getString(2)%></option>
+                <%
+			}
+		rset.close ();
+		pstmt.close ();
+		}
+	catch (SQLException e)
+		{ out.println ("Error! : " + e.toString ()); }
+	}
+%>
+              </select></td>
+          </tr>
+          <%
+if (session.getAttribute("recommender")!=null && session.getAttribute("recommender").toString().compareTo("Y")==0)
+	{
+%>
+          <tr valign="top" class="smallfont"> 
+            <td width="50%" align="left" valign="middle" bgcolor="#FFFFFF" class = "contentBgColor"><b>Staff</b></td>
+            <td width="50%" align="left" valign="middle" bgcolor="#FFFFFF" class = "contentBgColor"> 
+              <select name="subordinate">
+<%
+	if (request.getParameter("subordinate")!=null && session.getAttribute("staffid").toString().compareTo(request.getParameter("subordinate").toString())==1)
+		{ %><option value="<%=session.getAttribute("staffid").toString()%>" selected><%=session.getAttribute("staffid").toString()%> - <%=validator.getStaffName(session.getAttribute("staffid").toString())%></option><% }
+	else
+		{ %><option value="<%=session.getAttribute("staffid").toString()%>"><%=session.getAttribute("staffid").toString()%> - <%=validator.getStaffName(session.getAttribute("staffid").toString())%></option><% } %>
+<%
+	String subordinate = "";
+	int a = 0;
+	String sql = "{ ? = call HIERARCHY.GetSubordinate( ?, ?, ?) }";
+	try
+		{
+		while (subordinate != null)
+			{
+			a++;
+			CallableStatement cstmt = conn.prepareCall (sql);
+	    	cstmt.registerOutParameter (1, Types.VARCHAR);
+			cstmt.setString (2, session.getAttribute("staffid").toString());
+			cstmt.setString (3, "ADM_AL");
+			cstmt.setInt (4, a);
+			cstmt.execute ();
+			subordinate = cstmt.getString(1);
+			if (cstmt.getString(1)!=null)
+				{
+%>
+                <option value="<%=subordinate%>" <%if (request.getParameter("subordinate")!=null&&request.getParameter("subordinate").toString().compareTo(subordinate)==0) { %>selected<% } %>><%=subordinate%> - <%=validator.getStaffName(subordinate)%></option>
+                <%
+				}
+			cstmt.close ();
+			}
+		}
+	catch (Exception e)
+		{ out.println (e.toString()); }
+	}
+%>
+              </select></td>
+          </tr>
+          <tr valign="top" class="smallfont"> 
+            <td colspan="2" align="left" valign="middle" bgcolor="#FFFFFF" class = "contentBgColor"><input type="submit" name="Go" value="Go"></td>
+          </tr>
+        </table>
+	</td></tr></table>
+</form>
+
+
+  <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#999999" >
+    <tr valign="top" class="smallfont">
+      <td colspan="3" class="contentBgColor"><div align="left"><strong>Legend</strong></div></td>
+    </tr>
+    <tr valign="top" class="smallfont">
+      <th width="8%" class="contentBgColor"><strong>Card Type </strong></th>
+      <td width="44%" class="contentBgColor"><strong>Remark (For Non Academic) </strong></td>
+      <td width="48%" class="contentBgColor"><strong>Remark (Academic) </strong></td>
+    </tr>
+    <tr valign="top" class="smallfont">
+      <td  class="contentBgColorAlternate"><img src="../../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" ></td>
+      <td class="contentBgColorAlternate">Check in &lt;=8.00 a.m. AND Check out &gt;=5.00 p.m. (&gt;= 8 hours)</td>
+      <td class="contentBgColorAlternate">Check in &amp; Check out =(Yes/Is not Null) AND &gt;= 8 hours</td>
+    </tr>
+    <tr valign="top" class="smallfont">
+      <td  class="contentBgColorAlternate"><img src="../../StaffAttendance/cms/StaffAttendance/simbol/merah.gif" ></td>
+      <td class="contentBgColorAlternate">Check in &lt; 8.00 a.m AND Check out &lt;5.00 p.m (&lt; 8 hours)</td>
+      <td class="contentBgColorAlternate">&lt; 8 hours from check in time </td>
+    </tr>
+	<!--
+    <tr valign="top" class="smallfont">
+      <td  class="contentBgColorAlternate"><img src="cms/StaffAttendance/simbol/hijau.gif" ></td>
+      <td class="contentBgColorAlternate">3 x <img src="cms/StaffAttendance/simbol/merah.gif" > = 1 <img src="cms/StaffAttendance/simbol/hijau.gif" ></td>
+      <td class="contentBgColorAlternate">3 x <img src="cms/StaffAttendance/simbol/merah.gif" > = 1 <img src="cms/StaffAttendance/simbol/hijau.gif" ></td>
+    </tr>-->
+  </table>
+  <div align="right">
+    <%
+if (conn!=null)
+	{
+	String sql = "SELECT SAH_REF_ID,TO_CHAR(SAH_DATE,'DD/MM/YYYY') SAH_DATE,SAH_TYPE, " +
+				 "NVL(TO_CHAR(SAH_TIME_FROM,'HH24:MI'),' ') SAH_TIME_FROM,SAH_IP_FROM,SAH_TIME_FROM_PASS, " +
+				 "NVL(TO_CHAR(SAH_TIME_TO,'HH24:MI'),' '),SAH_IP_TO,SAH_TIME_TO_PASS,NVL(SAH_REASON_TYPE,' '),NVL(SAH_REASON,' '),SAH_REASON_TYPE_PASS, " +
+				 "TO_CHAR(SAH_DATE,'DAY'),SAH_TYPE, " +
+				 "CHECKIN.SAID_LOCATION, CHECKOUT.SAID_LOCATION, TO_CHAR(SAH_TIME_FROM,'HH24'),TO_CHAR(SAH_TIME_TO,'HH24:MI'), " +
+				 "TRUNC( ((SAH_TIME_TO - SAH_TIME_FROM)) * 24) "+
+				 "FROM STAFF_ATTENDANCE_HEAD SAH1, STAFF_ATTENDANCE_IP_DETL CHECKIN, STAFF_ATTENDANCE_IP_DETL CHECKOUT " +
+				 "WHERE SAH_STAFF_ID = ? " +
+				 "AND CHECKIN.SAID_IP(+) = SAH_IP_FROM " +
+				 "AND CHECKOUT.SAID_IP(+) = SAH_IP_TO " +
+				 "AND " +
+				 "( (? IS NOT NULL AND TO_CHAR (SAH_DATE,'MM/YYYY') = ?) " +
+				 "OR ? IS NULL AND TO_CHAR (SAH_DATE,'MM/YYYY') = " +
+				 "(SELECT MAX(TO_CHAR(SAH_DATE,'MM/YYYY')) FROM STAFF_ATTENDANCE_HEAD SAH2 " +
+				 "WHERE SAH2.SAH_STAFF_ID = SAH1.SAH_STAFF_ID) ) " +
+				 "ORDER BY SAH_DATE,SAH_REF_ID";
+	try
+		{
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		if (request.getParameter("subordinate")!=null)
+			pstmt.setString (1, request.getParameter("subordinate").toString());
+		else
+			pstmt.setString (1, session.getAttribute("staffid").toString());
+		if (request.getParameter("month")!=null)
+			{
+			pstmt.setString (2, request.getParameter("month").toString());
+			pstmt.setString (3, request.getParameter("month").toString());
+			pstmt.setString (4, request.getParameter("month").toString());
+			}
+		else if (month!=null)
+			{
+			pstmt.setString (2, month);
+			pstmt.setString (3, month);
+			pstmt.setString (4, month);
+			}
+		else
+			{
+			pstmt.setNull (2, Types.VARCHAR);
+			pstmt.setNull (3, Types.VARCHAR);
+			pstmt.setNull (4, Types.VARCHAR);
+			}
+		ResultSet rset = pstmt.executeQuery ();
+		if (rset.isBeforeFirst ())
+			{
+%>
+      <a href="../StaffAttendance/AttendancePrint.jsp?staffid=<% if (request.getParameter("subordinate")!=null) { %><%=request.getParameter("subordinate").toString()%><% } else { %><%=session.getAttribute("staffid").toString()%><% } %>&month=<% if (request.getParameter("month")!=null) { %><%=request.getParameter("month").toString()%><% } else { %><%=month%><% } %>" target = "_blank" onMouseOver="window.status='Print';return true;"><IMG SRC = "../StaffAttendance/images/system/ic_printer.gif" ALT = "Print" border = "0"></a>
+    </p>
+  </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#999999" >
+    <tr>
+      <td>
+        <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#999999" >
+        <tr valign="top" class="smallfont"> 
+          <td rowspan="2" align="center" valign="bottom" class="contentBgColor"><strong>Date</strong></td>
+          <td rowspan="2" align="center" valign="bottom" class="contentBgColor"><strong>Day</strong></td>
+          <td rowspan="2" align="center" valign="bottom" class="contentBgColor"><b>Type</b></td>
+          <td colspan="3" align="center" class="contentBgColor"><strong>Check 
+            In</strong></td>
+          <td colspan="3" align="center" class="contentBgColor"><strong>Check 
+            Out</strong></td>
+          <td rowspan="2" align="center" valign="bottom" class="contentBgColor"><strong>Reason 
+            Type</strong></td>
+          <td rowspan="2" align="center" valign="bottom" class="contentBgColor"><strong>Reason</strong></td>
+        </tr>
+        <tr valign="top" class="smallfont"> 
+          <td align="center" valign="bottom" class="contentBgColor"><strong>Time</strong></td>
+          <td align="left" valign="bottom" class="contentBgColor"><strong>Location</strong></td>
+		  <td align="left" valign="bottom" class="contentBgColor"><strong>Card</strong></td>
+          <td align="center" valign="bottom" class="contentBgColor"><strong>Time</strong></td>
+          <td align="left" valign="bottom" class="contentBgColor"><strong>Location</strong></td>
+		  <td align="left" valign="bottom" class="contentBgColor"><strong>Card</strong></td>
+        </tr>
+        <%
+		
+		//int cin = 0;
+			while (rset.next ())
+				{
+				//cin = rset.getInt( 4 );
+%>
+        <tr> 
+          <td align="center" valign="top" class="contentBgColorAlternate"><% if (!current_date.equals(rset.getString(2))) { %><%=rset.getString(2)%><% } %></td>
+          <td align="center" valign="top" class="contentBgColorAlternate"><% if (!current_date.equals(rset.getString(2))) { current_date = rset.getString(2); %><%=rset.getString(13)%><% } %></td>
+          <td align="center" valign="top" class="contentBgColorAlternate"><%=rset.getString(14)%></td>
+          <td align="center" valign="top" class="contentBgColorAlternate"> 
+            <%
+				if (rset.getString(6)==null || (rset.getString(6)!=null&&rset.getString(6).compareTo("N")==0))
+					{ %>
+            <font color="#FF0000"><%=rset.getString(4)%> </font>
+            <% }
+				else
+					{ %>
+            <%=rset.getString(4)%>
+            <% } %>
+          </td>
+          <td align="left" valign="top" class="contentBgColorAlternate">
+<% 	if (rset.getString(5)!=null&&rset.getString(15)!=null) { %>
+    <%=rset.getString(15)%>
+<%} else if (rset.getString(5)!=null) { %>
+   <%=rset.getString(5)%>
+<%} if (rset.getString(5)!=null&&rset.getString(15)==null) 	{ %>
+<br>
+<font color="#FF0000">(Outside UMP)</font>
+<% } %>		  
+		  </td>
+		   <td align="left" valign="top" class="contentBgColorAlternate">
+		     <div align="center">
+	           
+		 		<% if (jenisstaff.equals("Y") ) {%>
+				
+			<% if ( rset.getString(17)!=null && rset.getString(17).equals("08") && Integer.parseInt(rset.getString(4).substring(3,5)) >01  ) {%>
+	           <img src="../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" >
+	        <%} else  if (rset.getString(17)!=null || rset.getString(17).equals("08")  || rset.getString(17).equals("07") 
+			 || rset.getString(17).equals("06") || rset.getString(17).equals("05") || rset.getString(17).equals("04") || rset.getString(17).equals("03")
+			 || rset.getString(17).equals("02") || rset.getString(17).equals("01")){%>
+	           <img src="../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" > 
+			<%} else {%>
+			   not check in
+			   <%}%>
+			   
+<%}else{%>
+			   <% if ( rset.getString(17)!=null) {%>
+			   <img src="../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" > 
+			    <%}else{%>
+			   not check in
+			   <%}%>
+			   
+			   
+<%}%>
+			   
+			   
+	         </div></td>
+           <td align="center" valign="top" class="contentBgColorAlternate"> 
+            <% 	if (rset.getString(9)==null || (rset.getString(9)!=null&&rset.getString(9).compareTo("N")==0)) 		{ %>            
+			<font color="#FF0000"><%=rset.getString(7)%></font> 
+            <% } else { %>
+            <%=rset.getString(7)%> 
+            <% } %>
+          </td>
+          <td align="left" valign="top" class="contentBgColorAlternate">
+<%
+				if (rset.getString(8)!=null&&rset.getString(16)!=null)
+					{ %><%=rset.getString(16)%><% }
+				else if (rset.getString(8)!=null)
+					{ %><%=rset.getString(8)%><% }
+				if (rset.getString(8)!=null&&rset.getString(16)==null)
+					{ %><br>
+<font color="#FF0000">(Outside UMP)</font>
+<% }
+%>		  
+		  </td>
+		  
+		  <td align="left" valign="top" class="contentBgColorAlternate"> 
+		  		  
+		    <div align="center">
+	          <!--%=( ( rset.getString(17) ==null)?"-":rset.getString(17).substring(0,2) )%-->
+	         
+			 
+<% if (jenisstaff.equals("Y") ) {%>
+	          <% if (   rset.getString(18) !=null && Integer.parseInt(rset.getString(18).substring(0,2)) <17  ) {%>
+	           <img src="../StaffAttendance/cms/StaffAttendance/simbol/merah.gif" >
+	           <%} else if (rset.getString(18) !=null && Integer.parseInt(rset.getString(18).substring(0,2)) >=17){%>
+	           <img src="../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" >
+	           <%} else {%> 
+			   not check out
+			   <%}%>
+		     
+<%}else{%>
+			   <% if ( rset.getString(18)!=null && Integer.parseInt(rset.getString(19))>8 ) {%>
+			   <img src="../StaffAttendance/cms/StaffAttendance/simbol/oren.gif" > 
+			    <%}else if (rset.getString(18)!=null && Integer.parseInt(rset.getString(19))<8 ) {%>
+				<img src="../StaffAttendance/cms/StaffAttendance/simbol/merah.gif" >
+			   <%}else{%>
+			   not check out
+			   <%}%>
+			   
+			   
+<%}%>   
+			   
+		  
+          </div></td>
+          <td class="contentBgColorAlternate"> 
+            <%
+				if (rset.getString(12)==null || rset.getString(12).compareTo("N")==0)
+					{ %>
+            <font color="#FF0000"><%=rset.getString(10)%></font> 
+            <% }
+				else
+					{ %>
+            <%=rset.getString(10)%> 
+            <% } %>
+          </td>
+          <td class="contentBgColorAlternate"><%=rset.getString(11)%></td>
+        </tr>
+        <%
+				}
+%>
+      </table>
+	</td></td></table>
+<%
+			}
+		else
+			%>No record found<%
+		rset.close ();
+		pstmt.close ();
+		}
+	finally {
+  try {
+      if (conn != null) 
+	  conn.close();    // Close the connection no matter what
+  }
+  catch (Exception e) { }
+ }
+ }
+%>
+<%conn.close ();%>
+			<br>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+A.link {
+	FONT: 7.5pt verdana; COLOR: #cccccc; TEXT-DECORATION: none
+}
+A.link:hover {
+	COLOR: #ffffff
+}
+.grey {
+	FONT: 7.5pt verdana; COLOR: #cccccc; TEXT-DECORATION: none
+}
+A.t1 {
+	FONT: bold 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.t1:hover {
+	COLOR: #fe0000
+}
+A.t2 {
+	FONT: bold 8pt verdana; COLOR: #fe0000; TEXT-DECORATION: none
+}
+A.t2:hover {
+	COLOR: #000000
+}
+TD {
+	FONT: 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+.tb1 {
+	FONT: bold 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+.tb2 {
+	FONT: 8.5pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+.tb3 {
+	FONT: 7.5pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link1 {
+	FONT: bold 8pt verdana; COLOR: #000000
+}
+A.link2 {
+	FONT: 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link2:hover {
+	COLOR: #ff0000
+}
+A.link3 {
+	FONT: bold 9pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link3:hover {
+	COLOR: #fe0000
+}
+A.link4 {
+	FONT: 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link5 {
+	FONT: 8pt verdana; COLOR: #333399; TEXT-DECORATION: none
+}
+A.link5:hover {
+	TEXT-DECORATION: underline
+}
+A.link6 {
+	FONT: bold 7pt verdana; COLOR: #304596
+}
+A.link7 {
+	FONT: 8pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link7:hover {
+	COLOR: #304596
+}
+A.link8 {
+	FONT: bold 8pt verdana; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.link8:hover {
+	COLOR: #000000
+}
+A.link9 {
+	FONT: bold 8pt verdana; COLOR: #1b2234; TEXT-DECORATION: none
+}
+A.link9:hover {
+	COLOR: #ffffff
+}
+A.link10 {
+	FONT: bold 7.5pt verdana; COLOR: #676767; TEXT-DECORATION: none
+}
+A.link10:hover {
+	COLOR: #000000
+}
+A.link11 {
+	FONT: bold 8pt verdana; COLOR: #fe0000; TEXT-DECORATION: none
+}
+A.link11:hover {
+	COLOR: #000000
+}
+A.link12 {
+	FONT: 7.5pt verdana; COLOR: #000000; TEXT-DECORATION: none
+}
+A.link12:hover {
+	TEXT-DECORATION: underline
+}
+.bg1 {
+	PADDING-RIGHT: 2pt; PADDING-LEFT: 2pt; PADDING-BOTTOM: 2pt; FONT: bold 8pt verdana; COLOR: #000000; PADDING-TOP: 2pt; BACKGROUND-COLOR: #fccc9c
+}
+.tBox {
+	BORDER-RIGHT: #1c5180 1px solid; BORDER-TOP: #1c5180 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #1c5180 1px solid; COLOR: #000000; BORDER-BOTTOM: #1c5180 1px solid; BACKGROUND-REPEAT: repeat; FONT-FAMILY: Verdana; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+.text {
+	BORDER-RIGHT: #1c5180 1px solid; BORDER-TOP: #1c5180 1px solid; FONT: 8pt verdana; BORDER-LEFT: #1c5180 1px solid; BORDER-BOTTOM: #1c5180 1px solid
+}
+TEXTAREA.text {
+	FONT: 8pt verdana
+}
+TD.error {
+	FONT: bold 8pt verdana; COLOR: red; BACKGROUND-COLOR: #f5f5f5
+}
+.AA TD {
+	PADDING-RIGHT: 1px; BORDER-TOP: #eeeeee 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 8px
+}
+.BB TD {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 10px; PADDING-BOTTOM: 3px; FONT: bold 8pt verdana; PADDING-TOP: 3px; TEXT-DECORATION: none
+}
+.tip {
+	FONT: 7.5pt verdana; COLOR: #666666
+}
+.button {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; BACKGROUND-IMAGE: url(http://myjobstreet.jobstreet.com/_pic/bgbutton1.gif); PADDING-BOTTOM: 2px; FONT: bold 8pt Verdana; COLOR: #000000; PADDING-TOP: 2px
+}
+TD.msg {
+	BORDER-RIGHT: #cccccc 0.5pt solid; PADDING-RIGHT: 4px; BORDER-TOP: #cccccc 0.5pt solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 0.5pt solid; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 0.5pt solid; BACKGROUND-COLOR: #eeeeee
+}

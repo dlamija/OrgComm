@@ -1,0 +1,55 @@
+TD {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size :8pt;	
+}
+
+A {
+	text-decoration: none;
+	color: blue;
+}
+
+A:Hover {
+	text-decoration: underline;
+	color: red;
+}
+
+.headertd{
+	background : #CCCCCC url(../images/bevel24.gif);
+	font-size : 8pt;	
+}
+
+.footertd{
+	background : #CCCCCC url(../images/bevel16.gif);
+	font-size : 7pt;
+}
+
+.tabtd{
+	background : #CCCCCC;
+	font-size : 8pt;
+	font-weight : bold;
+}
+
+.content1 {  
+	background: #CCCCCC
+}
+
+.content2 {  
+	background: #FFFFFF
+}
+
+.smallfont {  
+	font-size: 8pt; font-family: Arial
+}
+
+.tabtd2 { 
+	background : #999999;  font-size : 8pt; font-weight : bold; ; color: #FFFFFF
+}
+
+.hrow {  
+	background-color: #CCCCCC
+}
+
+BODY { 
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size :8pt;	
+ } 

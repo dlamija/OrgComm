@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet
+END
+VenueCancellation.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/VenueCancellation.java
+END
+MeetingResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/MeetingResource.java
+END
+UpdateDecision.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateDecision.java
+END
+UpdateSenateDecision.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateSenateDecision.java
+END
+NewNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewNotes.java
+END
+NewSenateNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenateNotes.java
+END
+NewAttendee.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewAttendee.java
+END
+NewMeetingType.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewMeetingType.java
+END
+NewDecisionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewDecisionAction.java
+END
+ActionBy.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/ActionBy.java
+END
+SenateActionBy.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/SenateActionBy.java
+END
+UpdateFollowup.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateFollowup.java
+END
+ProgressAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/ProgressAttachment.java
+END
+NewMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewMember.java
+END
+NewSenateMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenateMember.java
+END
+AttendeeCalendar.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/AttendeeCalendar.java
+END
+DeleteSetup.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DeleteSetup.java
+END
+UpdateDecisionActionProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateDecisionActionProgress.java
+END
+AgendaAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/AgendaAttachment.java
+END
+AgendaSenateAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/AgendaSenateAttachment.java
+END
+NewSenateAgenda.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenateAgenda.java
+END
+NewSenate.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenate.java
+END
+NewAgenda.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewAgenda.java
+END
+UpdateMeetingCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateMeetingCategory.java
+END
+ArchiveMeeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/ArchiveMeeting.java
+END
+UpdateGuest.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateGuest.java
+END
+DecisionCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DecisionCategory.java
+END
+UpdateMeeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateMeeting.java
+END
+UpdateAttendee.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateAttendee.java
+END
+DeleteGuests.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DeleteGuests.java
+END
+UpdateAttendeeOther.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateAttendeeOther.java
+END
+UpdateDecisionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateDecisionAction.java
+END
+NewMeetingCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewMeetingCategory.java
+END
+NewGuest.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewGuest.java
+END
+NewMeeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewMeeting.java
+END
+NewAttendeeOther.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewAttendeeOther.java
+END
+DecisionAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DecisionAttachment.java
+END
+DecisionSenateAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DecisionSenateAttachment.java
+END
+NewSenateDecision.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenateDecision.java
+END
+NewDecision.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewDecision.java
+END
+DeleteMeetingCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DeleteMeetingCategory.java
+END
+UpdateMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateMember.java
+END
+DeleteMeeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/DeleteMeeting.java
+END
+LoginValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/LoginValidator.java
+END
+NewFollowup.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewFollowup.java
+END
+UpdateAgenda.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateAgenda.java
+END
+UpdateSenateAgenda.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateSenateAgenda.java
+END
+UpdateMinutes.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateMinutes.java
+END
+SessionValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/SessionValidator.java
+END
+NewSenateDecisionActionProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewSenateDecisionActionProgress.java
+END
+NewDecisionActionProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewDecisionActionProgress.java
+END
+UpdateNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateNotes.java
+END
+UpdateSenateNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateSenateNotes.java
+END
+VenueBooking.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/VenueBooking.java
+END
+UpdateMeetingType.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/UpdateMeetingType.java
+END
+NewMinutes.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/ecommstaff/src/cms/admin/meeting/servlet/NewMinutes.java
+END

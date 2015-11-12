@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/ecommstaff/src/cms/leave
+END
+Leave_upload.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/Leave_upload.java
+END
+OvertimeDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/OvertimeDB.java
+END
+LeaveTypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/LeaveTypes.java
+END
+LeaveDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/LeaveDB.java
+END
+LeaveLeave.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/LeaveLeave.java
+END
+CarryForwardDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/CarryForwardDB.java
+END
+Leave.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/Leave.java
+END
+EntitlementDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3/ecommstaff/src/cms/leave/EntitlementDB.java
+END

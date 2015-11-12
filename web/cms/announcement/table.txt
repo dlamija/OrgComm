@@ -1,0 +1,22 @@
+create table announcement_main
+(
+am_REF                          varchar2(10),
+am_posted_by                    VARCHAR2(10),
+am_title                     	VARCHAR2(50),
+am_message                      varchar2(4000),
+am_date                    	DATE,
+am_category                     varchar2(10),
+am_url                          varchar2(100), 
+am_access			varchar2(20),
+am_approver			varchar2(10),
+am_approve_date			date,
+constraint pk_announcement_main primary key (am_ref),
+constraint fk_am_posted_by foreign key (am_posted_by) references staff_main (sm_staff_id));
+
+
+
+create sequence am_seq1 
+start with 1
+increment by 1
+nomaxvalue;
+
